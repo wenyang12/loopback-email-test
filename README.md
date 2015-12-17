@@ -83,12 +83,13 @@
         - wen-users.js
         - wen-users.json
 
-```javascript wen-users.js
+```javascript
 module.exports = function(WenUsers) {
   //add code 可以在这里给模型WenUsers添加方法
 };
 ```
-```javascript wen-users.json
+
+```javascript
 {
   "name": "WenUsers",
   "plural": "users",
@@ -155,9 +156,11 @@ module.exports = function(WenUsers) {
 
 此时运行项目`$ slc run`  在浏览器http://localhost:3000/explorer 预览 会多出一个WenUsers调试接口
 
-接着我们要把内建的Users配置屏蔽掉（不屏蔽掉的话，下面我们调试WenUsers接口的时候会有问题），即让浏览器页面只显示WenUsers调试接口
+接着我们要把内建的Users配置屏蔽掉（不屏蔽掉的话，下面我们调试WenUsers接口的时候会有问题），即让浏览器页面只显示WenUsers调试接口，
 
-```javascript ./server/model-config.json
+编辑`./server/model-config.json`
+
+```javascript
 {
   "_meta": {
     "sources": [
@@ -200,7 +203,7 @@ module.exports = function(WenUsers) {
 
 首先，编辑一下这个文件`./common/models/wen-users.js`
 
-```javascript wen-users.js
+```javascript
 module.exports = function(WenUsers) {
   WenUsers.sayHi = function(callback) {
     callback(null, 'hi');
@@ -222,7 +225,7 @@ module.exports = function(WenUsers) {
 ```
 接着在`./common/models/wen-users.json`配置访问权限
 
-```javascript wen-users.json
+```javascript
 {
   "name": "WenUsers",
   "plural": "users",
@@ -403,18 +406,18 @@ MongoDB提供了可用于32位和64位系统的预编译二进制包，你可以
 
 其实配置不同数据库，就是增加一个js文件，或者json文件都可以
 
-在`./server/` 这个目录下，增加一个datasources.dev.js文件，然后编辑如下：
+在`./server/` 这个目录下，增加一个`datasources.dev.js`文件，然后编辑如下：
 
-```javascript datasources.dev.js
+```javascript
 exports.mongodb = {
   'url': 'mongodb://localhost:27017/loopback-test-dev',
   'name': 'mongodb',
   'connector': 'mongodb'
 };
 ```
-## OR
+## OR `datasources.dev.json`
 
-```javascript datasources.dev.json
+```javascript
 {
   "db": {
     "name": "db",
@@ -435,7 +438,7 @@ exports.mongodb = {
 接着运行项目，即可（此时要重新注册，然后登录测试，因为用了新的数据库）
 >$ slc run
 
-要想切换回使用刚刚的数据库（loopback-test），设置环境变量为空即可，因为默认使用的数据库，就是文件./server/datasources.json指向的数据库
+要想切换回使用刚刚的数据库（loopback-test），设置环境变量为空即可，因为默认使用的数据库，就是文件`./server/datasources.json`指向的数据库
 >$ set NODE_ENV=""
 >$ slc run
 
