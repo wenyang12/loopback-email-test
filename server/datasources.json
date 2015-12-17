@@ -1,0 +1,31 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "url": "mongodb://localhost:27017/loopback-test",
+    "name": "mongodb",
+    "connector": "mongodb"
+  },
+  "email":{
+    "name": "email",
+    "connector": "mail",
+    "transports":[
+      {
+        "type": "smtp",
+        "host": "smtp.qq.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth":{
+          "user": "408523614@qq.com",
+          "pass": "邮箱密码"
+        }
+      }
+    ]
+
+  }
+}
