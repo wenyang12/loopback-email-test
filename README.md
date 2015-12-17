@@ -136,14 +136,16 @@ module.exports = function(WenUsers) {
 
 运行项目，测试注册一个用户，看是否会发送邮件，要是成功的话会看到如图所示：
 
-![测试注册发送邮件图]({{ root_url }}/images/loopback-pic-5-1.png)
+![测试注册发送邮件图](http://wenyang12.github.io/images/loopback-pic-5-1.png)
 
 >以上代码会多出了 `"verificationToken"`这个字段，这个字段的生成是用来验证登陆的。
 
 此时登陆，是不成功的，如图：
 
-![测试注册发送邮件图]({{ root_url }}/images/loopback-pic-5-2.png)
+![测试注册发送邮件图](http://wenyang12.github.io/images/loopback-pic-5-2.png)
 
 打开你邮件收到的链接，即激活了用户，然后再登陆测试,此时即可成功登陆，会返回一个ttl，如图所示：
 
-![测试注册发送邮件图]({{ root_url }}/images/loopback-pic-5-3.png)
+![测试注册发送邮件图](http://wenyang12.github.io/images/loopback-pic-5-3.png)
+
+
