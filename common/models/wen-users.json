@@ -1,0 +1,20 @@
+{
+  "name": "WenUsers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "accessType": "READ",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

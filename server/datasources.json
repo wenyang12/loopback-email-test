@@ -1,0 +1,25 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "email":{
+    "name":"email",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.qq.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth":{
+          "user": "填入自己的邮箱",
+          "pass": "填入自己邮箱的密码"
+        }
+      }
+    ]
+  }
+}
